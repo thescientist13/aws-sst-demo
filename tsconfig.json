@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "types": [
+      "./sst-env.d.ts"
+    ]
+  }
+}
