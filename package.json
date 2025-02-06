@@ -1,0 +1,20 @@
+{
+  "name": "aws-sst-demo",
+  "version": "1.0.0",
+  "description": "A simple reproduction repo of using SST",
+  "type": "module",
+  "author": "Owen Buckley <owen@thegreenhouse.io>",
+  "scripts": {
+    "sst": "sst",
+    "sst:dev": "sst -- dev",
+    "sst:preview": "sst deploy --stage preview",
+    "sst:deploy": "sst deploy --stage production"
+  },
+  "devDependencies": {
+    "aws-lambda": "^1.0.7",
+    "sst": "^3.6.37"
+  },
+  "optionalDependencies": {
+    "sst-linux-x64": "^3.6.37"
+  }
+}
