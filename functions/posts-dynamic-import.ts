@@ -1,8 +1,8 @@
 import { Handler } from "aws-lambda";
 
 export const handler: Handler  = async function(_event) {
-  // @ts-expect-error see https://github.com/jianliao/spectrum-css/issues/64
-  const products = await (await import(new URL('./products-service.js', import.meta.url))).getProducts()
+  // @ts-expect-error see https://github.com/microsoft/TypeScript/issues/42866
+  const products = await (await import(new URL('./posts-service.js', import.meta.url))).getPosts()
   console.log({ products });
 
   return {
