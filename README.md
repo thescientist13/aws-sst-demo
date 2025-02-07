@@ -11,7 +11,7 @@ A simple reproduction repo of using AWS with [**SST**](https://sst.dev/).
 
 ## Demos
 
-To run SST locally, run `npm run sst:dev`
+To run SST locally, run `npm run sst:dev`.  To deploy, run `npm run sst:preview`.
 
 > All functions are in the _functions/_ directory and defined in _infra/api-routes.ts_
 
@@ -50,6 +50,18 @@ A function that loads _functions/posts.json_ using Node's `fs` API combined with
 |  ENOENT: no such file or directory, open '/Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/artifacts/ApiRouteEssmdb
 Handler-dev/posts.json'
 ```
+
+### `/api/posts-copy-files` 🚫
+
+Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option.
+
+```sh
+|  Build       functions/posts-copy-files.handler
+|  Error       functions/posts-copy-files.handler
+|  ENOENT: no such file or directory, open '/Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/artifacts/ApiRouteZmetao
+Handler-dev/posts.json'
+```
+
 
 ### `/api/posts-no-bundle` 🚫
 

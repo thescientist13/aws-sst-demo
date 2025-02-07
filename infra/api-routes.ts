@@ -12,6 +12,11 @@ api.route("GET /api/posts", {
   handler: "functions/posts.handler",
 });
 
+api.route("GET /api/posts-copy-files", {
+  handler: "functions/posts-copy-files.handler",
+  copyFiles: [{ from: "functions/posts.json" }]
+});
+
 api.route("GET /api/posts-no-bundle", {
   bundle: "functions",
   handler: "posts-no-bundle.handler",
