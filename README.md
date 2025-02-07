@@ -15,7 +15,7 @@ To run SST locally, run `npm run sst:dev`.  To deploy, run `npm run sst:preview`
 
 > All functions are in the _functions/_ directory and defined in _infra/api-routes.ts_
 
-###  `/api/hello` ✅
+### ✅ `/api/hello`
 
 A function that returns a string of _Hello World_.
 
@@ -25,7 +25,7 @@ A function that returns a string of _Hello World_.
 |  Done        took +222ms
 ```
 
-### `/api/greeting` ✅
+### ✅ `/api/greeting`
 
 A function that returns JSON and accepts an optional `?name=xxx` query param to return a custom message.
 
@@ -40,7 +40,7 @@ A function that returns JSON and accepts an optional `?name=xxx` query param to 
 |  Done        took +164ms
 ```
 
-### `/api/posts` 🚫
+### 🚫 `/api/posts`
 
 A function that loads _functions/posts.json_ using Node's `fs` API combined with `new URL` + `import.meta.url` to return some JSON.
 
@@ -51,7 +51,7 @@ A function that loads _functions/posts.json_ using Node's `fs` API combined with
 Handler-dev/posts.json'
 ```
 
-### `/api/posts-copy-files` 🚫
+### 🚫 `/api/posts-copy-files`
 
 Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option.
 
@@ -63,7 +63,7 @@ Handler-dev/posts.json'
 ```
 
 
-### `/api/posts-no-bundle` 🚫
+### 🚫 `/api/posts-no-bundle`
 
 Like `/api/posts` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) option.
 
@@ -81,7 +81,7 @@ Like `/api/posts` but uses SST's [no bundling](https://sst.dev/docs/component/aw
 |  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
 ```
 
-### `/api/posts-dynamic-import` 🚫
+### 🚫 `/api/posts-dynamic-import`
 
 A function that dynamically imports an `async` function from _functions/posts-service.js_ to return some JSON.
 
@@ -107,7 +107,7 @@ ApiRouteSfmbadHandler-dev/bundle.mjs
 |  ↳ at handler (/Users/owenbuckley/Workspace/github/aws-sst-demo/functions/posts-dynamic-import.ts:5:40)
 ```
 
-### `/api/posts-dynamic-import-no-bundle` 🚫
+### 🚫 `/api/posts-dynamic-import-no-bundle`
 
 Like `/api/posts-dynamic-import` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) option.
 
