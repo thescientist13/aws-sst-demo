@@ -7,7 +7,7 @@ A simple reproduction repo of using AWS with [**SST**](https://sst.dev/).
 1. Clone the repo
 1. Have latest NodeJS LTS (or run `nvm use` if you have [**NVM**](https://github.com/nvm-sh/nvm) installed)
 1. Run `npm ci`
-1. Have your AWS credentials setup (or put them in a _.env_ at the root of the repo)
+1. Have your [AWS credentials setup](https://guide.sst.dev/chapters/configure-the-aws-cli.html) (or put them in a _.env_ at the root of the repo) and all the permissions detailed in [this guide](https://guide.sst.dev/chapters/create-an-iam-user.html)
 
 ## Demos
 
