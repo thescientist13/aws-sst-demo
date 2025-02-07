@@ -21,7 +21,7 @@ api.route("GET /api/posts-dynamic-import", {
   handler: "functions/posts-dynamic-import.handler",
 });
 
-api.route("GET /api/posts-no-bundle-dynamic-import", {
+api.route("GET /api/posts-dynamic-import-no-bundle", {
   bundle: "functions",
-  handler: "posts-dynamic-import.handler",
+  handler: "posts-dynamic-import-no-bundle.handler",
 });
