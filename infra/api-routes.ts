@@ -7,3 +7,7 @@ api.route("GET /api/hello", {
 api.route("GET /api/greeting", {
   handler: "functions/greeting.handler",
 });
+
+api.route("GET /api/posts", {
+  handler: "functions/posts.handler",
+});

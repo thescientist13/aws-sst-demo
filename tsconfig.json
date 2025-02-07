@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "module": "NodeNext",
     "types": [
+      "node",
       "./sst-env.d.ts"
     ]
   }
