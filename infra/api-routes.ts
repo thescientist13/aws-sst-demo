@@ -11,3 +11,8 @@ api.route("GET /api/greeting", {
 api.route("GET /api/posts", {
   handler: "functions/posts.handler",
 });
+
+api.route("GET /api/posts-no-bundle", {
+  bundle: "functions",
+  handler: "posts-no-bundle.handler",
+});
