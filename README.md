@@ -66,6 +66,25 @@ ts/ApiRouteVenkonHandler-dev/posts.json'
 ex.ts:4:25)
 ```
 
+### 🚫 `/api/posts-directory-no-bundle`
+
+Like `/api/posts-directory` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) feature and the [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option for the JSON file.
+
+```sh
+|  Build       index.handler
+|  Error       index.handler
+|  The "path" argument must be of type string. Received undefined
+|  ↳ TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+|  ↳ at validateString (node:internal/validators:162:11)
+|  ↳ at Object.pathToFileURL (node:url:1024:3)
+|  ↳ at file:///Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/platform/dist/nodejs-runtime/index.j
+s:33:24
+|  ↳ at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+|  ↳ at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+|  ↳ at async loadESM (node:internal/process/esm_loader:34:7)
+|  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
+```
+
 ### 🚫 `/api/posts-copy-files`
 
 Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option.
@@ -76,7 +95,6 @@ Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/
 |  ENOENT: no such file or directory, open '/Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/artifacts/ApiRouteZmetao
 Handler-dev/posts.json'
 ```
-
 
 ### 🚫 `/api/posts-no-bundle`
 

@@ -17,6 +17,12 @@ api.route("GET /api/posts-directory", {
   copyFiles: [{ from: "assets/posts.json", to: 'functions/posts-directory/posts.json' }]
 });
 
+api.route("GET /api/posts-directory-no-bundle", {
+  bundle: "functions/posts-directory-no-bundle",
+  handler: "index.handler",
+  copyFiles: [{ from: "assets/posts.json", to: 'functions/posts-directory/posts.json' }]
+});
+
 api.route("GET /api/posts-copy-files", {
   handler: "functions/posts-copy-files.handler",
   copyFiles: [{ from: "functions/posts.json" }]
