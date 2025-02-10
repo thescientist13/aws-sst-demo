@@ -51,6 +51,21 @@ A function that loads _functions/posts.json_ using Node's `fs` API combined with
 Handler-dev/posts.json'
 ```
 
+### 🚫 `/api/posts-directory`
+
+Like `/api/posts` but is contained in a directory and uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option for the JSON file.
+
+```sh
+|  Build       functions/posts-directory/index.handler
+|  Error       functions/posts-directory/index.handler
+|  ENOENT: no such file or directory, open '/Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/artifac
+ts/ApiRouteVenkonHandler-dev/posts.json'
+|  ↳ at async open (node:internal/fs/promises:638:25)
+|  ↳ at async Object.readFile (node:internal/fs/promises:1242:14)
+|  ↳ at async <anonymous> (/Users/owenbuckley/Workspace/github/aws-sst-demo/functions/posts-directory/ind
+ex.ts:4:25)
+```
+
 ### 🚫 `/api/posts-copy-files`
 
 Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option.
