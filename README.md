@@ -85,6 +85,23 @@ s:33:24
 |  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
 ```
 
+### 🚫 `/api/posts-directory-async-no-bundle`
+
+Like `/api/posts-directory` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) feature with an `async` function.
+
+```sh
+|  Build       index.handler
+|  Error       index.handler
+|  The "path" argument must be of type string. Received undefined
+|  ↳ TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+|  ↳ at Object.pathToFileURL (node:url:1018:3)
+|  ↳ at file:///Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/platform/dist/nodejs-runtime/index.j
+s:33:24
+|  ↳ at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+|  ↳ at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:547:26)
+|  ↳ at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+```
+
 ### 🚫 `/api/posts-copy-files`
 
 Like `/api/posts` but uses SST's [copyFiles](https://sst.dev/docs/component/aws/function#copyfiles) option.
