@@ -1,5 +1,6 @@
 .env
 sst-env.d.ts
+.build/
 .sst/
-functions/resource.enc
+**/resource.enc
 node_modules/

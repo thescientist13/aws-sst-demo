@@ -85,6 +85,26 @@ s:33:24
 |  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
 ```
 
+### 🚫 `/api/posts-directory-no-bundle-exec-sync`
+
+Like `/api/posts-directory` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) feature trying to emulate [this example](https://github.com/sst/sst/blob/c4537afa607ce3f1f4fee6c80294099bc750ef1e/examples/aws-swift/sst.config.ts#L28).
+
+```sh
+|  Build       index.handler
+|  Error       index.handler
+|  The "path" argument must be of type string. Received undefined
+|  ↳ TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received unde
+fined
+|  ↳ at validateString (node:internal/validators:162:11)
+|  ↳ at Object.pathToFileURL (node:url:1024:3)
+|  ↳ at file:///Users/owenbuckley/Workspace/github/aws-sst-demo/.sst/platform/dist/nodejs-runtim
+e/index.js:33:24
+|  ↳ at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+|  ↳ at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+|  ↳ at async loadESM (node:internal/process/esm_loader:34:7)
+|  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
+```
+
 ### 🚫 `/api/posts-directory-async-no-bundle`
 
 Like `/api/posts-directory` but uses SST's [no bundling](https://sst.dev/docs/component/aws/function#bundle) feature with an `async` function.

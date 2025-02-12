@@ -20,7 +20,19 @@ api.route("GET /api/posts-directory", {
 api.route("GET /api/posts-directory-no-bundle", {
   bundle: "functions/posts-directory-no-bundle",
   handler: "index.handler",
-  copyFiles: [{ from: "assets/posts.json", to: 'functions/posts-directory/posts.json' }]
+});
+
+function build() {
+  require("child_process").execSync(`
+    mkdir -p .build/lambda/exec
+    cp -rv functions/posts-directory-no-bundle-exec-sync/* .build/lambda/exec
+  `);
+  return `.build/lambda/exec`;
+}
+
+api.route("GET /api/posts-directory-no-bundle-exec-sync", {
+  bundle: build(),
+  handler: "index.handler",
 });
 
 api.route("GET /api/posts-directory-async-no-bundle", {
