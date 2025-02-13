@@ -44,7 +44,7 @@ A function that returns JSON and accepts an optional `?name=xxx` query param to 
 
 A function that returns JSON read from a file using `new URL` + `import.meta.url` and (critically) ["ejects" out of esbuild bundling](https://sst.dev/docs/component/aws/function#bundle) to avoid known issue of esbuild [mangling `import.meta.url`](https://github.com/evanw/esbuild/issues/2294).  Follows this [SST demo](https://github.com/sst/sst/tree/dev/examples/aws-bundle).
 
-> Note: handler file extension **must be** _.mjs_ for ESM only.
+> Note: handler file extension **must be** _.mjs_ for ESM only, unless you add a _package.json_ with `type="module"` in it.
 
 <details>
 
