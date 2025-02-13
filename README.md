@@ -40,6 +40,14 @@ A function that returns JSON and accepts an optional `?name=xxx` query param to 
 |  Done        took +164ms
 ```
 
+### ✅ `/api/posts-official-demo`
+
+A function that returns JSON read from a file using `new URL` + `import.meta.url` and (critically) ["ejects" out of esbuild bundling](https://sst.dev/docs/component/aws/function#bundle) to avoid known issue of esbuild [mangling `import.meta.url`](https://github.com/evanw/esbuild/issues/2294).
+
+> Note: handler file extension **must be** _.mjs_ for ESM only.
+
+<details>
+
 ### 🚫 `/api/posts`
 
 A function that loads _functions/posts.json_ using Node's `fs` API combined with `new URL` + `import.meta.url` to return some JSON.
@@ -194,3 +202,5 @@ Like `/api/posts-dynamic-import` but uses SST's [no bundling](https://sst.dev/do
 |  ↳ at async loadESM (node:internal/process/esm_loader:34:7)
 |  ↳ at async handleMainPromise (node:internal/modules/run_main:113:12)
 ```
+
+</details>

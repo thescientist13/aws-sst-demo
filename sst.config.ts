@@ -10,11 +10,6 @@ export default $config({
     };
   },
   async run() {
-    new sst.aws.Function("Function", {
-      bundle: "./src",
-      handler: "index.handler",
-      url: true,
-    });
     await import("./infra/api-routes.js");
   },
 });
